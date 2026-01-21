@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sentrix"
+version = "0.1.0"
+description = "Confidence-based web exposure intelligence scanner"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [
+  { name = "YourName" }
+]
+license = { text = "MIT" }
+dependencies = [
+  "aiohttp",
+  "beautifulsoup4"
+]
+
+[project.scripts]
+sentrix = "sentrix:main"
