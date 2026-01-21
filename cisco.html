@@ -1,0 +1,88 @@
+<h2>Scan Report for cisco.com</h2><pre>{
+  "target": "cisco.com",
+  "resolved_ips": [
+    "72.163.4.185"
+  ],
+  "ports_scanned": [
+    45,
+    78,
+    80,
+    443,
+    65535
+  ],
+  "open_ports": [
+    80,
+    443
+  ],
+  "closed_ports": [
+    45,
+    78,
+    65535
+  ],
+  "per_port_results": {
+    "45": {
+      "open": false
+    },
+    "78": {
+      "open": false
+    },
+    "80": {
+      "open": true,
+      "server": "",
+      "cdn": "Fastly",
+      "cves": [],
+      "missing_headers": [
+        {
+          "header": "X-Frame-Options",
+          "severity": "MEDIUM",
+          "owasp": "A05:2021 Security Misconfiguration",
+          "confidence": "Contextual"
+        },
+        {
+          "header": "Referrer-Policy",
+          "severity": "LOW",
+          "owasp": "A01:2021 Broken Access Control",
+          "confidence": "Contextual"
+        }
+      ]
+    },
+    "443": {
+      "open": true,
+      "server": "TLS CN: www.cisco.com",
+      "cdn": "Fastly",
+      "cves": [],
+      "missing_headers": [
+        {
+          "header": "X-Frame-Options",
+          "severity": "MEDIUM",
+          "owasp": "A05:2021 Security Misconfiguration",
+          "confidence": "Contextual"
+        },
+        {
+          "header": "Referrer-Policy",
+          "severity": "LOW",
+          "owasp": "A01:2021 Broken Access Control",
+          "confidence": "Contextual"
+        }
+      ]
+    },
+    "65535": {
+      "open": false
+    }
+  },
+  "risk_score": 1.0,
+  "timestamp": "2026-01-21T21:39:04.536151+00:00",
+  "cves": [],
+  "cve_details": {},
+  "kev_hits": [],
+  "missing_headers": [
+    "X-Frame-Options",
+    "Referrer-Policy",
+    "X-Frame-Options",
+    "Referrer-Policy"
+  ],
+  "owasp_summary": {
+    "A05:2021 Security Misconfiguration": 2,
+    "A01:2021 Broken Access Control": 2
+  }
+}</pre>
