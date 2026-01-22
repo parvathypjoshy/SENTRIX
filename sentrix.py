@@ -733,5 +733,9 @@ async def main():
             f"<pre>{json.dumps(report, indent=2)}</pre>"
         )
 
+# SYNC CLI WRAPPER  ✅ ADD HERE
+def cli():
+    asyncio.run(main())
+    
 if __name__ == "__main__":
     asyncio.run(main())

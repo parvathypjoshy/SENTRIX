@@ -82,6 +82,18 @@ Prioritization context for active threats
 
 Purpose:
 Distinguish theoretical vulnerabilities from those actively exploited in the wild.
+## 5. Rate Limiting & Scan Safety
+
+SENTRIX uses explicit, semaphore-based rate limiting to ensure safe and
+predictable scanning behavior.
+
+- Network probes are gated by an asyncio semaphore
+- External APIs (NVD, CVE.org) use a shared concurrency limiter
+- Profile-based delays introduce randomized jitter to avoid burst patterns
+- Automatic retries with backoff prevent transient API failures
+
+This design minimizes target impact, avoids API throttling, and supports
+responsible use in bug bounty and production environments.
 
 ## 5. Confidence Scoring & False-Positive Reduction
 

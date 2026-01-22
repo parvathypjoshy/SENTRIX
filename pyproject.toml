@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools>=67.0.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -8,14 +8,23 @@ version = "0.1.0"
 description = "Confidence-based web exposure intelligence scanner"
 readme = "README.md"
 requires-python = ">=3.8"
-authors = [
-  { name = "YourName" }
-]
+authors = [{ name = "Parvathy", email = "parvathypjoshy@gmail.com" }]
 license = { text = "MIT" }
 dependencies = [
-  "aiohttp",
-  "beautifulsoup4"
+  "aiohttp>=3.8.5",
+  "beautifulsoup4>=4.12.2",
+  "lxml>=4.9.3"
+]
+keywords = ["webscanner", "cve", "security", "asyncio", "pentest"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Intended Audience :: Security Researchers",
+  "Topic :: Security :: Vulnerability Scanning"
 ]
 
 [project.scripts]
-sentrix = "sentrix:main"
+sentrix = "sentrix:cli"
+
+

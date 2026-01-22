@@ -1,4 +1,5 @@
 # SENTRIX
+
 ### Confidence-Based Web Exposure Intelligence Scanner
 SENTRIX is an asynchronous web security analysis tool that correlates service fingerprinting, CPE-aware CVE enumeration, CISA Known Exploited Vulnerabilities (KEV), and configuration weaknesses to produce confidence-weighted risk assessments instead of noisy vulnerability lists.
 
@@ -20,6 +21,14 @@ It focuses on signal quality, false-positive reduction, and transparency, making
 - CVE.org metadata enrichment
 
 - CISA KEV feed correlation (real-world exploitation context)
+
+- Semaphore-based rate limiting for both network probes and external APIs
+
+- Profile-driven concurrency caps
+  
+- Randomized jitter delays (stealth mode)
+  
+- Shared API semaphore to respect NVD 2.0 rate limits
 
 - Confidence scoring to reduce false positives
 
@@ -46,21 +55,29 @@ All findings are:
 - Safe for scoped environments
 OWASP mappings are provided for context, not as vulnerability confirmation.
 
+Confidence scores are intentionally hard-capped to prevent score inflation.
+Weak or ambiguous fingerprints cannot produce high-risk findings, even when
+high-severity CVEs exist.
+
+
 ## 🚀 Installation
 git clone https://github.com/parvathypjoshy/SENTRIX.git
 
-cd sentrix
+cd SENTRIX
+pip install .
+sentrix example.com
 
-pip install -r requirements.txt
+or
 
-python sentrix.py example.com
-
+git clone https://github.com/parvathypjoshy/SENTRIX.git
+python3 sentrix.py example.com
 
 ## Requirements
 - Python 3.8+
 - Internet access for NVD / KEV feeds
 
 ## 🧪 Usage Examples
+
 ## Default balanced scan
 python sentrix.py example.com
 
@@ -98,6 +115,9 @@ confidence-weighted security findings — without intrusive exploitation.
 Multi-source service identification using HTTP headers, TLS certificates,
 HTML heuristics, and CDN detection to ensure accurate attribution.
 
+CDN detection suppresses origin CVE attribution when responses are served
+by edge providers (e.g., Cloudflare, Akamai), preventing false positives.
+
 ### 2. CPE Construction Engine
 Generates minimal CPE 2.3 identifiers from observed fingerprints with
 vendor normalization and version-aware specificity scoring.
@@ -110,15 +130,22 @@ CVSS parsing and intelligent caching.
 Prioritizes vulnerabilities actively exploited in the wild using
 CISA Known Exploited Vulnerabilities data.
 
-### 5. Confidence Scoring
+### 5. Rate Limiting & Scan Safety
+
+SENTRIX uses explicit, semaphore-based rate limiting to ensure safe and
+predictable scanning behavior.
+This design minimizes target impact, avoids API throttling, and supports
+responsible use in bug bounty and production environments.
+
+### 6. Confidence Scoring
 Assigns probabilistic confidence (0.0–1.0) to each CVE using fingerprint
 strength, CPE accuracy, CVSS severity, and KEV presence.
 
-### 6. Security Header Analysis
+### 7. Security Header Analysis
 Identifies missing HTTP security headers and maps findings to
 OWASP Top 10 for configuration hygiene insights.
 
-### 7. Risk Scoring Engine
+### 8. Risk Scoring Engine
 Produces a final 0–10 exposure score using confidence-weighted CVEs,
 configuration weaknesses, and exploitation likelihood.
 
@@ -201,6 +228,11 @@ results/
 └── report.html           # Human-readable risk report
 
 ---
+### 🕵️‍♂️ PASSIVE VS ⚡ ACTIVE
+Passive mode avoids external CVE enumeration entirely and relies only on
+observed fingerprints. Active mode enables CVE correlation without any
+exploitation or intrusive requests.
+
 ### 🛡️ Safety & Ethics
 
 - No payload injection

@@ -1,0 +1,213 @@
+<h2>Scan Report for scanme.nmap.org</h2><pre>{
+  "target": "scanme.nmap.org",
+  "resolved_ips": [
+    "45.33.32.156"
+  ],
+  "ports_scanned": [
+    80,
+    443,
+    8080,
+    8000,
+    8443
+  ],
+  "open_ports": [
+    80
+  ],
+  "closed_ports": [
+    443,
+    8080,
+    8000,
+    8443
+  ],
+  "per_port_results": {
+    "80": {
+      "open": true,
+      "server": "Apache/2.4.7 (Ubuntu)",
+      "cdn": null,
+      "cves": [
+        "CVE-2007-4723",
+        "CVE-2009-0796",
+        "CVE-2009-2299",
+        "CVE-2011-1176",
+        "CVE-2011-2688",
+        "CVE-2012-3526",
+        "CVE-2012-4001",
+        "CVE-2012-4360",
+        "CVE-2013-0941",
+        "CVE-2013-0942"
+      ],
+      "missing_headers": [
+        {
+          "header": "Content-Security-Policy",
+          "severity": "MEDIUM",
+          "owasp": "A05:2021 Security Misconfiguration",
+          "confidence": "Contextual"
+        },
+        {
+          "header": "X-Frame-Options",
+          "severity": "MEDIUM",
+          "owasp": "A05:2021 Security Misconfiguration",
+          "confidence": "Contextual"
+        },
+        {
+          "header": "X-Content-Type-Options",
+          "severity": "LOW",
+          "owasp": "A05:2021 Security Misconfiguration",
+          "confidence": "Contextual"
+        },
+        {
+          "header": "Strict-Transport-Security",
+          "severity": "HIGH",
+          "owasp": "A02:2021 Cryptographic Failures",
+          "confidence": "Contextual"
+        },
+        {
+          "header": "Referrer-Policy",
+          "severity": "LOW",
+          "owasp": "A01:2021 Broken Access Control",
+          "confidence": "Contextual"
+        }
+      ]
+    },
+    "443": {
+      "open": false
+    },
+    "8080": {
+      "open": false
+    },
+    "8000": {
+      "open": false
+    },
+    "8443": {
+      "open": false
+    }
+  },
+  "risk_score": 9.2,
+  "timestamp": "2026-01-22T09:17:31.306241+00:00",
+  "cves": [],
+  "cve_details": {
+    "CVE-2007-4723": {
+      "state": "PUBLISHED",
+      "assigner": "mitre",
+      "cve_org_url": "https://www.cve.org/CVERecord?id=CVE-2007-4723",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2007-4723",
+      "confidence_score": 0.58,
+      "confidence_level": "Medium",
+      "cvss": 7.5,
+      "kev": false,
+      "cpe_used": "cpe:2.3:a:apache:http_server:2.4.7:*:*:*:*:*:*:*"
+    },
+    "CVE-2009-0796": {
+      "state": "PUBLISHED",
+      "assigner": "redhat",
+      "cve_org_url": "https://www.cve.org/CVERecord?id=CVE-2009-0796",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2009-0796",
+      "confidence_score": 0.48,
+      "confidence_level": "Low",
+      "cvss": 2.6,
+      "kev": false,
+      "cpe_used": "cpe:2.3:a:apache:http_server:2.4.7:*:*:*:*:*:*:*"
+    },
+    "CVE-2009-2299": {
+      "state": "PUBLISHED",
+      "assigner": "mitre",
+      "cve_org_url": "https://www.cve.org/CVERecord?id=CVE-2009-2299",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2009-2299",
+      "confidence_score": 0.48,
+      "confidence_level": "Low",
+      "cvss": 5.0,
+      "kev": false,
+      "cpe_used": "cpe:2.3:a:apache:http_server:2.4.7:*:*:*:*:*:*:*"
+    },
+    "CVE-2011-1176": {
+      "state": "PUBLISHED",
+      "assigner": "redhat",
+      "cve_org_url": "https://www.cve.org/CVERecord?id=CVE-2011-1176",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2011-1176",
+      "confidence_score": 0.48,
+      "confidence_level": "Low",
+      "cvss": 4.3,
+      "kev": false,
+      "cpe_used": "cpe:2.3:a:apache:http_server:2.4.7:*:*:*:*:*:*:*"
+    },
+    "CVE-2011-2688": {
+      "state": "PUBLISHED",
+      "assigner": "redhat",
+      "cve_org_url": "https://www.cve.org/CVERecord?id=CVE-2011-2688",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2011-2688",
+      "confidence_score": 0.58,
+      "confidence_level": "Medium",
+      "cvss": 7.5,
+      "kev": false,
+      "cpe_used": "cpe:2.3:a:apache:http_server:2.4.7:*:*:*:*:*:*:*"
+    },
+    "CVE-2012-3526": {
+      "state": "PUBLISHED",
+      "assigner": "redhat",
+      "cve_org_url": "https://www.cve.org/CVERecord?id=CVE-2012-3526",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2012-3526",
+      "confidence_score": 0.48,
+      "confidence_level": "Low",
+      "cvss": 5.0,
+      "kev": false,
+      "cpe_used": "cpe:2.3:a:apache:http_server:2.4.7:*:*:*:*:*:*:*"
+    },
+    "CVE-2012-4001": {
+      "state": "PUBLISHED",
+      "assigner": "mitre",
+      "cve_org_url": "https://www.cve.org/CVERecord?id=CVE-2012-4001",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2012-4001",
+      "confidence_score": 0.48,
+      "confidence_level": "Low",
+      "cvss": 5.0,
+      "kev": false,
+      "cpe_used": "cpe:2.3:a:apache:http_server:2.4.7:*:*:*:*:*:*:*"
+    },
+    "CVE-2012-4360": {
+      "state": "PUBLISHED",
+      "assigner": "mitre",
+      "cve_org_url": "https://www.cve.org/CVERecord?id=CVE-2012-4360",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2012-4360",
+      "confidence_score": 0.48,
+      "confidence_level": "Low",
+      "cvss": 4.3,
+      "kev": false,
+      "cpe_used": "cpe:2.3:a:apache:http_server:2.4.7:*:*:*:*:*:*:*"
+    },
+    "CVE-2013-0941": {
+      "state": "PUBLISHED",
+      "assigner": "dell",
+      "cve_org_url": "https://www.cve.org/CVERecord?id=CVE-2013-0941",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2013-0941",
+      "confidence_score": 0.48,
+      "confidence_level": "Low",
+      "cvss": 2.1,
+      "kev": false,
+      "cpe_used": "cpe:2.3:a:apache:http_server:2.4.7:*:*:*:*:*:*:*"
+    },
+    "CVE-2013-0942": {
+      "state": "PUBLISHED",
+      "assigner": "dell",
+      "cve_org_url": "https://www.cve.org/CVERecord?id=CVE-2013-0942",
+      "nvd_url": "https://nvd.nist.gov/vuln/detail/CVE-2013-0942",
+      "confidence_score": 0.48,
+      "confidence_level": "Low",
+      "cvss": 4.3,
+      "kev": false,
+      "cpe_used": "cpe:2.3:a:apache:http_server:2.4.7:*:*:*:*:*:*:*"
+    }
+  },
+  "kev_hits": [],
+  "missing_headers": [
+    "Content-Security-Policy",
+    "X-Frame-Options",
+    "X-Content-Type-Options",
+    "Strict-Transport-Security",
+    "Referrer-Policy"
+  ],
+  "owasp_summary": {
+    "A05:2021 Security Misconfiguration": 3,
+    "A02:2021 Cryptographic Failures": 1,
+    "A01:2021 Broken Access Control": 1
+  }
+}</pre>
