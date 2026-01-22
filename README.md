@@ -47,7 +47,7 @@ All findings are:
 OWASP mappings are provided for context, not as vulnerability confirmation.
 
 ## 🚀 Installation
-git clone https://github.com/yourusername/sentrix.git
+git clone https://github.com/parvathypjoshy/SENTRIX.git
 
 cd sentrix
 
