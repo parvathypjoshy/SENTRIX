@@ -84,9 +84,6 @@ python sentrix.py example.com --html report.html
 ### Verbose transparency mode
 python sentrix.py example.com --verbose
 
-### Active Profile
-python sentrix.py example.com --profile active
-
 ## ⚙️ Scan Profiles
 | Profile  | Probe Concurrency | API Concurrency | Delay      | Use Case                      |
 | -------- | ----------------- | --------------- | ---------- | ----------------------------- |
