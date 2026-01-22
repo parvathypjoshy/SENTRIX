@@ -70,6 +70,7 @@ sentrix example.com
 or
 
 git clone https://github.com/parvathypjoshy/SENTRIX.git
+
 python3 sentrix.py example.com
 
 ## Requirements
