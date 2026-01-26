@@ -89,7 +89,7 @@ python sentrix.py example.com --profile stealth
 python sentrix.py example.com --mode active
 
 ### Custom ports
-python sentrix.py example.com --ports 80,443,8080,8443
+python sentrix.py example.com --ports 80,443,8000,8080,8443
 ### Range of Ports
 python sentrix.py example.com --ports 1-65535
 
